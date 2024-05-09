@@ -31,9 +31,9 @@ const Signup = () => {
     }
   }, [auth]);
   return (
-    <Box width={"100%"} height={"100%"} display="flex" flex={1}>
+    <Box width={"100%"} height={"100%"} display="flex" flex={1} position={"relative"} left={"100px"}>
       <Box padding={8} mt={8} display={{ md: "flex", sm: "none", xs: "none" }}>
-        <img src="airobot.png" alt="Robot" style={{ width: "400px" }} />
+        <img src="prompt3 (2).png" alt="Robot" style={{ width: "400px" }} />
       </Box>
       <Box
         display={"flex"}
@@ -43,6 +43,8 @@ const Signup = () => {
         padding={2}
         ml={"auto"}
         mt={16}
+        position={"relative"}
+        right={"250px"}
       >
         <form
           onSubmit={handleSubmit}
@@ -80,7 +82,8 @@ const Signup = () => {
                 mt: 2,
                 width: "400px",
                 borderRadius: 2,
-                bgcolor: "#00fffc",
+                bgcolor: "#2a55de",
+                color:"white",
                 ":hover": {
                   bgcolor: "white",
                   color: "black",

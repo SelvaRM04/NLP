@@ -1,4 +1,5 @@
 import User from "../models/User.js";
+import { spawn } from 'child_process';
 import { configureOpenAI } from "../config/openai-config.js";
 import { OpenAIApi } from "openai";
 export const generateChatCompletion = async (req, res, next) => {
@@ -18,7 +19,15 @@ export const generateChatCompletion = async (req, res, next) => {
         chats.push({ content: message, role: "user" });
         user.chats.push({ content: message, role: "user" });
         await user.save();
-        //console.log(user.chats)
+        const pythonProcess = spawn('python', ['../pythonf.py', message]);
+        // Listen for output from the Python script
+        var outputData;
+        pythonProcess.stdout.on('data', (data) => {
+            outputData = data.toString().trim();
+            //res.send({ output: outputData });
+            user.chats.push({ role: "assistant", content: outputData });
+        });
+        console.log("Hello", outputData);
         // send all chats with new one to openAI API
         const config = configureOpenAI();
         const openai = new OpenAIApi(config);
@@ -28,7 +37,7 @@ export const generateChatCompletion = async (req, res, next) => {
         //   messages: chats,
         // });
         //user.chats.push(chatResponse.data.choices[0].message);
-        user.chats.push({ role: "assistant", content: "nalla irukken" });
+        //user.chats.push({role:"assistant",content:"Welcome"})
         await user.save();
         return res.status(200).json({ chats: user.chats });
     }

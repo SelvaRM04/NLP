@@ -14,13 +14,7 @@ function Header() {
               {auth?.isLoggedIn ? (
                 <>
                 <NavigationLink
-                  bg="#00fffc"
-                  to="/chat"
-                  text="Go to chat"
-                  textColor="black"
-                />
-                <NavigationLink
-                  bg="#51538f"
+                  bg="#2a55de"
                   to="/"
                   text="Logout"
                   textColor="white"
@@ -29,17 +23,16 @@ function Header() {
                 </>):
                 (<>
                 <NavigationLink
-                  bg="#00fffc"
+                  bg="#dbd249"
                   to="/login"
                   text="Login"
                   textColor="black"
                 />
                 <NavigationLink
-                  bg="#51538f"
+                  bg="#2a55de"
                   to="/signup"
                   text="Signup"
                   textColor="white"
-                  
                 />
                 </>)}
             </div>

@@ -46,7 +46,7 @@ const ChatItem = ({
         my: 1,
       }}
     >
-        <img src="Logo.png" alt="openai" width={"70px"} />
+        <img src="prompt2.png" alt="openai" width={"45px"} />
       
       <Box>
         {!messageBlocks && (
@@ -78,9 +78,9 @@ const ChatItem = ({
         marginY : "5px"
       }}
     >
-      <Avatar sx={{ ml: "0", bgcolor: "black", color: "white", marginX: "17px"  }}>
+      <Avatar sx={{ ml: "0", bgcolor: "black", color: "white", marginX: "3px"  }}>
         {auth?.user?.name[0]}
-        {/* {auth?.user?.name.split(" ")[1][0]} */}
+        {auth?.user?.name[auth?.user?.name.length-1].toUpperCase()}
       </Avatar>
       <Box>
         {!messageBlocks && (

@@ -102,14 +102,13 @@ const Chat = () => {
             }}
           >
             {auth?.user?.name[0]}
-            {/* {auth?.user?.name.split(" ")[1][0]} */}
+            {auth?.user?.name[auth?.user?.name.length-1].toUpperCase()}
           </Avatar>
           <Typography sx={{ mx: "auto", fontFamily: "work sans" }}>
             You are talking to a ChatBOT
           </Typography>
           <Typography sx={{ mx: "auto", fontFamily: "work sans", my: 4, p: 3 }}>
-            You can ask some questions related to Knowledge, Business, Advices,
-            Education, etc. But avoid sharing personal information
+            You can ask questions related to Business, etc. But avoid sharing personal information
           </Typography>
           <Button
             onClick={handleDeleteChats}
@@ -120,7 +119,7 @@ const Chat = () => {
               fontWeight: "700",
               borderRadius: 3,
               mx: "auto",
-              bgcolor: red[300],
+              bgcolor: red[500],
               ":hover": {
                 bgcolor: red.A400,
               },
@@ -190,6 +189,7 @@ const Chat = () => {
               color: "white",
               fontSize: "20px",
             }}
+            placeholder="Type your query here"
           />
           <IconButton onClick={handleSubmit} sx={{ color: "white", mx: 1 }}>
             <IoMdSend />

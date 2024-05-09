@@ -30,7 +30,7 @@ const Home = () => {
             my: 10,
           }}
         >
-          <img
+          {/* <img
             src="robot.png"
             alt="robot"
             style={{ width: "200px", margin: "auto" }}
@@ -40,24 +40,23 @@ const Home = () => {
             src="openai.png"
             alt="openai"
             style={{ width: "200px", margin: "auto" }}
-          />
+          /> */}
         </Box>
-        <Box sx={{ display: "flex", mx: "auto" }}>
+        {/* <Box sx={{ display: "flex", mx: "auto" }}> */}
           <img
-            src="chat.png"
+            src="prompt1.jpg"
             alt="chatbot"
             style={{
               display: "flex",
               margin: "auto",
-              width: isBelowMd ? "80%" : "60%",
-              borderRadius: 20,
-              boxShadow: "-5px -5px 105px #64f3d5",
-              marginTop: 20,
+              width: isBelowMd ? "60%" : "60%",
+              //borderRadius: 20,
+              //boxShadow: "-5px -5px 105px #64f3d5",
+              //marginTop: 20,
               marginBottom: 20,
-              padding: 10,
+              //padding: 10,
             }}
           />
-        </Box>
       </Box>
       <Footer />
     </Box>
